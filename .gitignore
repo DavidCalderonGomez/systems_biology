@@ -1,0 +1,12 @@
+# compiled binaries
+*.o
+*.out
+src/test
+src/*.exe
+
+# python cache
+__pycache__/
+*.pyc
+
+# jupyter checkpoints
+.ipynb_checkpoints/
