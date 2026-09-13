@@ -19,6 +19,7 @@ Crandom::Crandom(unsigned long long j){
     v = u; int64();
     w = v; int64();
   }
+//Genera un número aleatorio de 64 bits
 unsigned long long Crandom::int64() {
     u = u * 2862933555777941757LL + 7046029254386353087LL;
     v ^= v >> 17; v ^= v << 31; v ^= v >> 8;
@@ -26,9 +27,9 @@ unsigned long long Crandom::int64() {
     unsigned long long x = u ^ (u << 21); x ^= x >> 35; x ^= x << 4;
     return (x + v) ^ w;
   }
-//número aleatorio con distribución exponencial con parámetro igual al inverso del valor medio de la exponencial
-double Crandom::exponencial(float st){
-  return -log(r())/st;
+
+double Crandom::exponencial(float tau){
+  return -log(r())*tau;
 }
 double Crandom:: gauss(float mu,float sigma){
   return sigma*sqrt(-2*log(r()))*cos(2*M_PI*r())+mu;
