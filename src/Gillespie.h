@@ -56,3 +56,5 @@ void Cell::Gillespie_step(Crandom &ran64, bool repression){
             protein-=1; //protein degradation
         }
 }
+
+
