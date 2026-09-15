@@ -4,7 +4,6 @@
 
 const double kr=1, gammar=0.2, kp=60, gammap=0.03; //creation and degradation rates for mRNA and protein
 const double alpha=0.1, beta=1, K=4000, h=2; //parameters for the Hill function
-const int steps=250000; //number of steps for the simulation
 
 //Class for the cell with mRNA and protein
 class Cell{
