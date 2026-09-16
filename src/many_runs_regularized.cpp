@@ -13,10 +13,10 @@ int main(){
 
     //Run the Gillespie algorithm for a number of steps
 
-    for(int k=0; k<50; k++){ //run 50 independent simulations
+    for(int k=0; k<100; k++){ //run 500 independent simulations
 
         //It is better to use a while loop and impose the condition for some final time, for example 1000, instead of a fixed number of steps.
-        while(cell.get_time() < 500){ //run until time reaches 500
+        while(cell.get_time() < 500){ //run until time reaches 250
             cell.Gillespie_step(ran64, repression); //perform a Gillespie step
             //Output the current state of the cell
             //time, mRNA, protein a single line separated by tabs
