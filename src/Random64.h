@@ -12,6 +12,7 @@ public:
   unsigned int int32(){return (unsigned int) int64();};
   double exponencial(float tau);
   double gauss(float mu,float sigma);
+    int poisson(double mean);  //he añadido la posibilidad de generar números distribuidos con poisson. 
 };
 Crandom::Crandom(unsigned long long j){
     v=4101842887655102017LL; w=1;
@@ -33,4 +34,14 @@ double Crandom::exponencial(float tau){
 }
 double Crandom:: gauss(float mu,float sigma){
   return sigma*sqrt(-2*log(r()))*cos(2*M_PI*r())+mu;
+}
+
+int Crandom::poisson(double mean){
+  int k=0;
+  double t=exponencial(1.0);   // tiempo hasta el primer evento de un proceso de Poisson de tasa 1
+  while(t<mean){               // cuántos eventos caben en [0, mean]
+    k++;
+    t+=exponencial(1.0);
+  }
+  return k;
 }
